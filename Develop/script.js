@@ -6,7 +6,7 @@ var upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"
 var nums = ["1","2","3","4","5","6","7","8","9","0",];
 var schars = ["!","@","#","$","%","^","&","*","(",")","=","+",];
 
-var allChars = ["lower","upper","nums","schars"]
+var allChars = [lower, upper, nums, schars];
 
 // confirm('U want upper letters ??')
 var chatLength = window.prompt("How many characters do you want in your password? must be between 8 and 128.");
@@ -21,25 +21,25 @@ if (chatLength >=8 && chatLength <= 128) {
 
 var wantLower =confirm("include lower case letters?")
 if(wantLower) {
-  console.log(wantLower)
+  console.log(allChars["0"])
 }
 
 var wantUpper =confirm("include upper case letters?")
 
 if(wantUpper) {
-  console.log(wantUpper)
+  console.log(allChars["1"])
 }
 
 var wantNums =confirm("include numbers?")
 
 if(wantNums) {
-  console.log(wantNums)
+  console.log(allChars["2"])
 }
 
 var wantSchars =confirm("include special characters?")
 
 if(wantSchars) {
-  console.log(wantSchars)
+  console.log(allChars["3"])
 }
 // Write password to the #password input
 function writePassword() {
@@ -57,10 +57,10 @@ function generatePassword() {
 
   var finalPassword = "";
 
-  for (let index = 0; index < lower.length; index++) {
+  for (let index = 0; index < chatLength; index++) {
     console.log('TIme to make password!!', lower[Math.floor(Math.random() * lower.length)]);
     
-    finalPassword += lower[Math.floor(Math.random() * lower.length)]; 
+    finalPassword += lower[Math.floor(Math.random() * chatLength)]; 
   
   }
 
