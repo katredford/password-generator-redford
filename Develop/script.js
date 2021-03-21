@@ -9,11 +9,11 @@ var schars = ["!","@","#","$","%","^","&","*","(",")","=","+",];
 var allChars = [];
 
 var userPassword ="";
-// confirm('U want upper letters ??')
+
 
 // Write password to the #password input
 function writePassword() {
-  console.log('HELLOOO FROM THE FIRST FUNCTION~!!!!');
+  // ('HELLOOO FROM THE FIRST FUNCTION~!!!!');
 
   var password = generatePassword();
   
@@ -23,27 +23,30 @@ function writePassword() {
 
 
 function generatePassword() {
-  // console.log('TIme to make password!!', lower[Math.floor(Math.random() * lower.length)]);
-
+  userPassword = "";
+// window pops up when "generat password" is clicked
   var chatLength = window.prompt("How many characters do you want in your password? must be between 8 and 128.");
 
 if (chatLength >=8 && chatLength <= 128) {
   console.log(chatLength);
-  chatLength = parseInt(chatLength);
-// } if (chatLength >=7 && chatLength <= 129) {
-//   alert("Must be between 8 and 128 characters.");
+  // this is to convert the results into numbers
+  chatLength = parseInt(chatLength); 
+
 }else{
-  window.prompt("How many characters do you want in your password? must be between 8 and 128.");
+// if the person has a character length outside the allowed range the function starts over
+  return generatePassword()
 }
 
+// a window pops up and asks if the person wants lowercase letters in their password,
+//  and make sure there is at least one is in the final password
 var wantLower =confirm("include lower case letters?")
 if(wantLower) {
-  console.log(lower)
+  // this takes the empty allChars array and joins it with
   allChars = allChars.concat(lower);
   console.log(allChars)
   var character = lower[Math.floor(Math.random() * lower.length)];
   userPassword = userPassword + character
-  console.log(lower)
+
 }
 
 var wantUpper =confirm("include upper case letters?");
