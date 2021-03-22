@@ -46,7 +46,7 @@ if(wantLower) {
   console.log(allChars)
   var character = lower[Math.floor(Math.random() * lower.length)];
   userPassword = userPassword + character
-
+console.log(userPassword)
 }
 
 var wantUpper =confirm("include upper case letters?");
